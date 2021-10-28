@@ -80,7 +80,6 @@ text><v-icon left>{{ link.icon }}</v-icon>{{ link.title }}</v-btn>
 
 <v-main>
 
-<!--<router-view></router-view>-->
 
 </v-main>
 
