@@ -16,6 +16,7 @@ component: Home
 },
 {
 path:"/ad/:id",
+props: true,
 name:"ad",
 component:Ad
 },
