@@ -45,7 +45,11 @@
 </template>
 <script>
 export default {
-	data () { 
+created () {
+if (this.$route.query['loginError']) {
+		this.$store.dispatch('setError','Please login to 	access this page')
+	}
+},	data () { 
 		return {
 			email: "",
 			password: "",
