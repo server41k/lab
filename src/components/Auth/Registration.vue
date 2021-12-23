@@ -40,7 +40,8 @@
 					<v-btn 
 					color="primary"
 					@click="onSubmit"
-					:disabled="!valid">
+					:loading="loading"
+					:disabled="!valid || loading">
 						Create Account
 					</v-btn>
 				</v-card-actions>
@@ -70,16 +71,26 @@ export default {
         v => v === this.password || 'Password should match'
         ]
 	} 
-	},
+	},computed: {
+	loading() {
+		return this.$store.getters.loading
+	}
+},
 	methods: {
 		onSubmit(){
-			if (this.$refs.form.validate()){
-				const user = {
-					email: this.email,
-					password: this.password
-				}
-				this.$store.dispatch('registerUser', user)
-			}
+	if (this.$refs.form.validate()){
+	const user = {
+		email: this.email,
+		password: this.password
+	}
+	this.$store.dispatch('registerUser', user)
+	.then(() => {
+		this.$router.push("/")
+	})
+	.catch((err) => {
+		console.log(err.message)
+	})
+}
 		}
 	}
 } 

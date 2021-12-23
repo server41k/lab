@@ -15,7 +15,7 @@ render: h => h(App),
 router:router,
 store,
   created(){
-const firebaseConfig = {
+var firebaseConfig = {
         apiKey: "AIzaSyBcIR36x_RFW-A8XK9iONwP-svtCHDtN1I",
         authDomain: "laba-22b10.firebaseapp.com",
         databaseURL: "https://laba-22b10-default-rtdb.firebaseio.com",
@@ -28,6 +28,6 @@ const firebaseConfig = {
   // Initialize Firebase
   fb.initializeApp(firebaseConfig);
   fb.analytics();
-  }
+}
 
 }).$mount('#app')
