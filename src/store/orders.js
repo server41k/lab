@@ -31,7 +31,7 @@ export default {
 			}
 		},
         async fetchOrders ({commit, getters}) {
-            commit('setLoaging', true)
+            commit('setLoading', true)
             commit('clearError') 
             const resultOrders = []
             try {
@@ -52,10 +52,10 @@ export default {
                 })
     }
             commit('loadOrders', resultOrders)
-            commit('setLoaging', false)
+            commit('setLoading', false)
     } catch(error) {
             commit('setError', error.message)
-            commit('setLoaging',false)
+            commit('setLoading',false)
             throw error
         }
     },async markOrderDone({commit,getters},payload) {
