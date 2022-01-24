@@ -1,3 +1,5 @@
+
+
 export default {
 	state: {
 		loading: false,
@@ -23,7 +25,7 @@ export default {
 		},
 		clearError ({commit}) {
 			commit('clearError')
-		}
+		},
 	},
 	getters: {
 		loading (state) {
